@@ -10,10 +10,14 @@ import time
 import numpy as np  # For median calculation
 import re
 
+# Charger les variables d'environnement
+load_dotenv()
+value_serp_api_key = os.getenv('VALUE_SERP_API_KEY')
+
 def interroger_api(mot_clef):
     print(f"Starting API interrogation for keyword: {mot_clef}")
     params = {
-        'api_key': 'C25E576BDB1B461CA233A9905E909031',
+        'api_key': value_serp_api_key,
         'q': mot_clef,
         'location': 'France',
         'google_domain': 'google.fr',
